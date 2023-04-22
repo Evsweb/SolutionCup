@@ -1,31 +1,32 @@
 import { useState } from 'react';
 import Header from '../components/header/Header'
 import MoneyStore from '../store/MoneyStore'
-import { useNavigate } from 'react-router-dom';
+import { observer } from "mobx-react-lite";
 
-function AddMoney() {
-    let navigate = useNavigate();
-    const [summ, setSumm] = useState(1);
+function Category() {
+    const [category, setCategory] = useState('');
 
 
   return (
     <div className="CenterWrapper">
       <Header/>
       <div className="CenterWrapper">
-        <div className='DefaultMargin'>Введите сумму пополнения</div>
-        <input className='DefaultMargin' id='moneySumm' type="number" onChange={(event)=> setSumm(event.target.value)}/>
+        <div className='DefaultMargin'>Добавить категорию</div>
+        <input className='DefaultMargin' id='moneySumm' type="text" onChange={(event)=> setCategory(event.target.value)}/>
         <div 
             className='Button DefaultMargin'
             onClick={()=> {
-                MoneyStore.addMoney(Number(summ));
-                navigate("/") 
+                MoneyStore.addCategory(category);
             }}
         >
-            <span>Пополнить</span>
+            <span>Добавить категорию</span>
         </div>
+        {MoneyStore.categories.map(elem => 
+          <div key={elem.id}>{elem.value}</div>
+        )}
       </div>
     </div>
   )
 }
 
-export default AddMoney
+export default observer(Category)

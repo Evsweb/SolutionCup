@@ -17,6 +17,9 @@ function ReviewComp() {
         <div className="DefaultMargin">
             Состояние счета: {MoneyStore.getTotalIncome() - MoneyStore.getTotalExpense()} рублей
         </div>
+        {
+            MoneyStore.getTotalIncome() - MoneyStore.getTotalExpense() < 0 && <div>"Нужно больше золота"</div>
+        }
       </div>
     </div>
   )

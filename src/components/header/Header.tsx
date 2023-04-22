@@ -7,7 +7,6 @@ function Header() {
     <div className="Header">
         <div className="HeaderLinks">
             <Link to="/">Обзор</Link>
-            <Link to="/">Категории</Link>
             <Link to="/wife">Расходы жены</Link>
         </div>
         <div className="HeaderMoney">

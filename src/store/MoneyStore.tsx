@@ -93,5 +93,13 @@ class MoneyStore {
         this.expenses.push(newCatch);
     }
 
+    addCategory(category:string) {
+        const obj = {
+            value: category,
+            id: this.categories[this.categories.length - 1].id + 1
+        }
+        this.categories.push(obj);
+    }
+
 }
 export default new MoneyStore();
