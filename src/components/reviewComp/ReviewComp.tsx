@@ -8,7 +8,15 @@ function ReviewComp() {
   return (
     <div className="Review">
       <div className="ReviewBody">
-        всего денех {MoneyStore.getTotalIncome()}
+        <div className="DefaultMargin">
+            Всего денег заработано: {MoneyStore.getTotalIncome()}
+        </div>
+        <div className="DefaultMargin">
+            Всего денег потрачено: {MoneyStore.getTotalExpense()}
+        </div>
+        <div className="DefaultMargin">
+            Состояние счета: {MoneyStore.getTotalIncome() - MoneyStore.getTotalExpense()} рублей
+        </div>
       </div>
     </div>
   )

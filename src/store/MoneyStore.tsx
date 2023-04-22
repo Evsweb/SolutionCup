@@ -63,6 +63,15 @@ class MoneyStore {
         return sum;
     }
 
+    getTotalExpense(): number {
+        let sum = 0;
+        // потому что for быстрее всего =)
+        for (let i = 0; i < this.expenses.length; i++) {
+            sum+= this.expenses[i].summ
+        }
+        return sum;
+    }
+
     addMoney(sum: number) {
         const date = new Date();
         const newIncome = {
@@ -71,6 +80,17 @@ class MoneyStore {
             month: date.getMonth()
         }
         this.income.push(newIncome)
+    }
+
+    catchMoney(summ:number, category:string) {
+        const date = new Date();
+        const newCatch = {
+            summ,
+            year: date.getFullYear(),
+            category,
+            month: date.getMonth()
+        }
+        this.expenses.push(newCatch);
     }
 
 }

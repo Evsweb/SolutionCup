@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function AddMoney() {
     let navigate = useNavigate();
-    const [summ, setSumm] = useState(MoneyStore.categories[0].value);
+    const [summ, setSumm] = useState(1);
     const [category, setCategory] = useState(MoneyStore.categories[0].value);
 
 
@@ -14,22 +14,26 @@ function AddMoney() {
       <Header/>
       <div className="CenterWrapper">
         <div className='DefaultMargin'>Введите сумму расхода и выберите категорию</div>
-        <input className='DefaultMargin' id='moneySumm' type="number" onChange={(event)=> setSumm(event.target.value)}/>
-        <select>
-        {MoneyStore.categories.map(fbb =>
-            <option 
-                onChange={()=> setCategory(fbb.value)}
-                key={fbb.id}
-                value={fbb.value}
-            >
-                {fbb.value}
-            </option>
-            )};
-        </select>
+        <div>
+          <input className='DefaultMargin' id='moneySumm' type="number" onChange={(event)=> setSumm(event.target.value)}/>
+        </div>
+        <div>
+          <select>
+          {MoneyStore.categories.map(fbb =>
+              <option 
+                  onChange={()=> setCategory(fbb.value)}
+                  key={fbb.id}
+                  value={fbb.value}
+              >
+                  {fbb.value}
+              </option>
+              )};
+          </select>
+        </div>
         <div 
             className='Button DefaultMargin'
             onClick={()=> {
-                MoneyStore.addMoney(Number(summ));
+                MoneyStore.catchMoney(Number(summ), category);
                 navigate("/") 
             }}
         >
