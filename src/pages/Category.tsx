@@ -22,7 +22,14 @@ function Category() {
             <span>Добавить категорию</span>
         </div>
         {MoneyStore.categories.map(elem => 
-          <div key={elem.id}>{elem.value}</div>
+          <div className="Category DefaultMargin" key={elem.id}>
+            <div className="CategoryWrapper">
+              <div>{elem.value}</div>
+              <div className="DeleteButton" onClick={() => {
+                MoneyStore.categories = MoneyStore.categories.filter(item => item.id !== elem.id)
+              }}>удалить</div>
+            </div>
+          </div>
         )}
       </div>
     </div>

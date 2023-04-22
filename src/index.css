@@ -23,3 +23,18 @@ body {
 .DefaultMargin {
   margin-top: 20px;
 }
+
+.Category {
+  display: flex;
+  justify-content: center;
+}
+.CategoryWrapper {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+.DeleteButton {
+  background-color: #ffdd2d;
+  padding: 5px;
+  cursor: pointer;
+}
