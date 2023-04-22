@@ -12,8 +12,9 @@ function Header() {
             <Link to="/">Ссылка</Link>
         </div>
         <div className="HeaderMoney">
-            <Link to="/">Пополнить бюджет</Link>
-            <Link to="/">Добавить расход</Link>
+            <Link to='/addmoney'>Пополнить бюджет</Link>
+            <Link to="/addexpenses">Добавить расход</Link>
+            <Link to="/">Добавить категорию</Link>
         </div>
     </div>
   )
