@@ -15,14 +15,7 @@ function AddMoney() {
       <div className="CenterWrapper">
         <div className='DefaultMargin'>Введите сумму расхода и выберите категорию</div>
         <input className='DefaultMargin' id='moneySumm' type="number" onChange={(event)=> setSumm(event.target.value)}/>
-        <div 
-            className='Button DefaultMargin'
-            onClick={()=> {
-                MoneyStore.addMoney(Number(summ));
-                navigate("/") 
-            }}
-        >
-          <select>
+        <select>
         {MoneyStore.categories.map(fbb =>
             <option 
                 onChange={()=> setCategory(fbb.value)}
@@ -33,7 +26,14 @@ function AddMoney() {
             </option>
             )};
         </select>
-            <span>Пополнить</span>
+        <div 
+            className='Button DefaultMargin'
+            onClick={()=> {
+                MoneyStore.addMoney(Number(summ));
+                navigate("/") 
+            }}
+        >
+            <span>Украсть денег</span>
         </div>
       </div>
     </div>
