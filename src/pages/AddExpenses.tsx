@@ -15,7 +15,7 @@ function AddMoney() {
       <div className="CenterWrapper">
         <div className='DefaultMargin'>Введите сумму расхода и выберите категорию</div>
         <div>
-          <input className='DefaultMargin' id='moneySumm' type="number" onChange={(event)=> setSumm(event.target.value)}/>
+          <input className='DefaultMargin' id='moneySumm' type="number" onChange={(event)=> setSumm(Number(event.target.value))}/>
         </div>
         <div>
           <select>
