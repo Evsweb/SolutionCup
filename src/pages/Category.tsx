@@ -12,11 +12,12 @@ function Category() {
       <Header/>
       <div className="CenterWrapper">
         <div className='DefaultMargin'>Добавить категорию</div>
-        <input className='DefaultMargin' id='moneySumm' type="text" onChange={(event)=> setCategory(event.target.value)}/>
+        <input className='DefaultMargin' value={category} id='moneySumm' type="text" onChange={(event)=> setCategory(event.target.value)}/>
         <div 
             className='Button DefaultMargin'
             onClick={()=> {
                 MoneyStore.addCategory(category);
+                setCategory('');
             }}
         >
             <span>Добавить категорию</span>

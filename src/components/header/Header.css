@@ -14,6 +14,10 @@
     padding: 5px;
 }
 
+.Header a:hover {
+    text-decoration: underline;
+}
+
 .HeaderLinks {
     border-bottom: 1px solid #dddfe0;
     padding: 20px 0;
